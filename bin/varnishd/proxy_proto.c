@@ -77,7 +77,7 @@ struct proxy_state *
 Proxy_Init(struct sess *sp) {
 	struct proxy_state *ps;
 
-	ps = (struct proxy_state *)WS_Alloc(sp->ws, sizeof *ps);
+	ps = (struct proxy_state *)(void *)WS_Alloc(sp->ws, sizeof *ps);
 	if (ps == NULL)
 		return (NULL);
 	memset(ps, 0, sizeof *ps);
@@ -86,7 +86,7 @@ Proxy_Init(struct sess *sp) {
 		WS_Reset(sp->ws, (char *)ps);
 		return (NULL);
 	}
-	ps->proxy_hdr = (struct proxy_v2 *)sp->ws->f;
+	ps->proxy_hdr = (struct proxy_v2 *)(void *)sp->ws->f;
 	sp->ps = ps;
 	return (ps);
 }

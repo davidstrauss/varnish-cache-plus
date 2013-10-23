@@ -55,6 +55,8 @@
 #include "vss.h"
 #include "vbm.h"
 
+int VTCP_port(const struct sockaddr_storage *addr);
+
 pid_t		child_pid = -1;
 
 

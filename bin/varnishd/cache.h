@@ -992,6 +992,7 @@ void SMP_Ready(void);
 struct proxy_state;
 
 struct proxy_state *Proxy_Init(struct sess *sp);
+struct proxy_state *Proxy_State(const struct sess *sp);
 void Proxy_Finish(struct sess *sp);
 int Proxy_Read(const struct sess *sp);
 int Proxy_Parse(struct sess *sp);

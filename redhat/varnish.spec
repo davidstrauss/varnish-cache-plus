@@ -1,10 +1,10 @@
 Summary: High-performance HTTP accelerator
-Name: varnish-plus
-Version: 3.0.3r1
+Name: varnish
+Version: 3.0.3plus
 Release: 1%{?dist}
 License: BSD
 Group: System Environment/Daemons
-URL: http://www.varnish-software.com/
+URL: http://www.varnish-cache.org/
 #Source0: http://repo.varnish-cache.org/source/%{name}-%{version}.tar.gz
 Source0: %{name}-%{version}%{?v_rc:-%{v_rc}}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -23,7 +23,6 @@ Requires(preun): /sbin/service
 %if %{undefined suse_version}
 Requires(preun): initscripts
 %endif
-Conflicts: varnish
 
 # Varnish actually needs gcc installed to work. It uses the C compiler 
 # at runtime to compile the VCL configuration files. This is by design.

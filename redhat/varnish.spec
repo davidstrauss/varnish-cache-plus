@@ -73,7 +73,7 @@ Documentation files for %name
 
 %prep
 #%setup -q
-%setup -q -n %{name}-%{version}%{?v_rc:-%{?v_rc}}
+%setup -q -n varnish-%{version}%{?v_rc:-%{?v_rc}}
 
 mkdir examples
 cp bin/varnishd/default.vcl etc/zope-plone.vcl examples

@@ -584,7 +584,6 @@ AC_CONFIG_FILES([
     lib/libvmod_std/Makefile
     lib/libjemalloc/Makefile
     man/Makefile
-    redhat/Makefile
     varnishapi.pc
 ])
 AC_OUTPUT
